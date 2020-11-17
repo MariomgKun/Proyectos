@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+  
+body {
+    background: #111111;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+/*Formulario*/
+.contForm{
+    min-height: 600px;
+}
+.sigInContainer {
+    background-color: #eee;
+    margin: 0 auto;
+    width: 700px;
+    padding: 20px;
+}
+
+
+  /*Footer*/
+  #main-footer {
+    text-align: center;
+    background: #444444;
+    color: #ffffff;
+    padding: 20px;
+    bottom: -600px;
+}
