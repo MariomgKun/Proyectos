@@ -1,20 +1,37 @@
 <?php
   include("Conexion.php");
-  session_start();
 
-    $usu = $_POST['Username'];
-    $pass = $_POST['Password'];
+
+    $email = $_POST['Username'];
+    $contraseña = $_POST['Password'];
+    $gamertag = $_POST['Gamertag'];
+    $contrasenia = $_POST['Password'];
     
+      switch ($_POST["Plataforma"]){
+        case 0:
+           $plataf = "Mobile";
+        break;
+        case 1:
+          $plataf = "PC";
+        break;
+       case 2:
+        $plataf = "Xbox";
+        break;
+        case 2:
+          $plataf = "Play Station";
+          break;
 
+      }
 
+    $nombre = $_POST['First_Name'];
+    $apellido = $_POST['Segundo_Nombre'];
 
+  $query = "INSERT INTO perfil(Email,Contraseña,Gamertag,Plataforma,Nombre,Apellido) VALUES('$email','$contraseña','$gamertag','$plataf','$nombre','$apellido')";
 
-  $query = "INSERT INTO `perfil` (`nombre`, `idioma`, `foto`, `idCuenta`, `idClasificacion`) VALUES  ('$nombre', '$idioma', 'nepe.jpg', '$usu','$varcheck')";
-
-  //$resultado= $conexion->query($query);S
+  $resultado= $conexion->query($query);
   if (mysqli_query($conexion, $query)) {
 
-    header("location: inicio.php");
+    header("location: ../principal.html");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);
   }

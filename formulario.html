@@ -24,35 +24,36 @@
         <div class="sigInContainer">
         <center><h1>Formulario WolfBattles :v</h1></center><br>
             <div class="ui equal width form">
+                <form name ="formularioUsuario" action= "./php/signup.php" method="POST">     
                 <div class="fields">
                 <div class="field">
-                    <label>Email </label>
-                    <input type="email" placeholder="Username">
+                    <label>Correo </label>
+                    <input type="email" placeholder="Correo" name="Username">
                 </div>
                 <div class="field">
-                    <label>Password</label>
-                    <input type="password" placeholder="Password">
+                    <label>Contraseña</label>
+                    <input type="password" placeholder="Contraseña" name="Password">
                 </div>
                 </div>
                 <div class="fields">
                 <div class="field">
                     <label>Nombre(s)</label>
-                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Nombre(s)" name="First_Name">
                 </div>
                 <div class="field">
                     <label>Apellidos</label>
-                    <input type="text" placeholder="Segundo Nombre">
+                    <input type="text" placeholder="Apellidos" name="Segundo_Nombre">
                 </div>
                 <div class="field">
                     <label>Gamertag</label>
-                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="Gamertag" name="Gamertag">
                 </div>
-                </div>
+                </div>  
 
                 <div class="ui form">
                     <div class="field">
                         <label>Plataforma</label>
-                    <select>
+                    <select placeholder="Plataforma" name="Plataforma">
                         <option value="">Selecciona una opción</option>
                         <option value="3">Play Station</option>
                         <option value="2">Xbox</option>
@@ -65,9 +66,9 @@
         
         
         <br>
-        <button class="positive ui button" onclick="location.href='./php/signup.php'">Confirmar</button>
+        <button class="positive ui button" type="submit">Confirmar</button>
         <button class="negative ui button" onclick="location.href='index.html'">Cancelar</button>
-        
+        </form>
         </div>
     </div>
 
