@@ -13,8 +13,11 @@ body {
 }
 
 /*Formulario*/
-.contForm{
+/* .contForm{
     min-height: 600px;
+} */
+.contForm2{
+    min-height: 510px;
 }
 .sigInContainer {
     background-color: #eee;
@@ -30,5 +33,4 @@ body {
     background: #444444;
     color: #ffffff;
     padding: 20px;
-    bottom: -600px;
 }
