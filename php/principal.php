@@ -16,7 +16,7 @@
         <a class="item" href="principal.html">WolfBattles</a>
         <?php
         session_start();
-        $aux= $_SESSION['Gamertag'];
+        $aux= $_SESSION['usuario'];
         echo "<a class='item' > $aux </a>"; 
 
         ?>
