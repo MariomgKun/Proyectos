@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 19-11-2020 a las 23:44:29
+=======
+-- Tiempo de generación: 19-11-2020 a las 22:21:40
+>>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -43,6 +47,7 @@ CREATE TABLE `equipo` (
 -- Volcado de datos para la tabla `equipo`
 --
 
+<<<<<<< HEAD
 INSERT INTO `equipo` (`idEquipo`, `idPerfil`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
 (10, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
 (11, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
@@ -56,6 +61,11 @@ INSERT INTO `equipo` (`idEquipo`, `idPerfil`, `NombreEquip`, `TorneosInscritos`,
 (19, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
 (20, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
 (21, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL);
+=======
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
+(8, 'UniHuevos4', '', 0, 'Madara', 'Edguix', NULL, NULL),
+(9, 'UniHuevos4', '', 0, 'Madara', 'Edguix', NULL, NULL);
+>>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
 
 -- --------------------------------------------------------
 
@@ -120,8 +130,13 @@ CREATE TABLE `perfil` (
 --
 
 INSERT INTO `perfil` (`idPerfil`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
+<<<<<<< HEAD
 (15, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', ''),
 (16, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', '');
+=======
+(1, 'Noel ', 'Andrew', 'nepe@gmail.com', 'nepe123', 'Madara', 'Play Station'),
+(2, 'Edgar', 'Hernandez', 'nepe2@gmail.com', 'nepe3', 'Edguix', 'PC');
+>>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
 
 -- --------------------------------------------------------
 
@@ -148,8 +163,7 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`idEquipo`),
-  ADD KEY `idPerfil` (`idPerfil`);
+  ADD PRIMARY KEY (`idEquipo`);
 
 --
 -- Indices de la tabla `juego`
@@ -192,6 +206,7 @@ ALTER TABLE `torneo`
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
+<<<<<<< HEAD
 --
 ALTER TABLE `equipo`
   MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
@@ -201,16 +216,26 @@ ALTER TABLE `equipo`
 --
 ALTER TABLE `perfil`
   MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+=======
+--
+ALTER TABLE `equipo`
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+>>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
+
+--
+-- AUTO_INCREMENT de la tabla `perfil`
+--
+ALTER TABLE `perfil`
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `equipo`
---
+<<<<<<< HEAD
 ALTER TABLE `equipo`
   ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`) ON DELETE CASCADE ON UPDATE CASCADE;
+=======
+>>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
 
 --
 -- Filtros para la tabla `moderador`
