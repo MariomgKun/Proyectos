@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Principal</title>
-	<link rel="stylesheet" href="css/semantic.min.css">
-	<link rel="stylesheet" href="css/semantic.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="js/jquery-3.5.1.min.js">
-	<link rel="stylesheet" href="js/semantic.js">
-	<link rel="stylesheet" href="js/semantic.min.js">
+    <title>Principal</title>
+    <meta charset="UTF-8"> 
+	<link rel="stylesheet" href="../css/semantic.min.css">
+	<link rel="stylesheet" href="../css/semantic.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../js/jquery-3.5.1.min.js">
+	<link rel="stylesheet" href="../js/semantic.js">
+	<link rel="stylesheet" href="../js/semantic.min.js">
 </head>
 <body>
 	<!--Menu superior-->
 	<div class="ui menu">	
         <a class="item" href="principal.html">WolfBattles</a>
+        <?php
+        session_start();
+        $aux= $_SESSION['Gamertag'];
+        echo "<a class='item' > $aux </a>"; 
+
+        ?>
 		<div class="right menu">
 		  <a class="item" href="index.html">Salir</a>
 		</div>
