@@ -32,7 +32,7 @@
   if (mysqli_query($conexion, $query)) {
     session_start();
     $_SESSION["usuario"] =$gamertag ;
-    header("location: ../principal.html");
+    header("location: principal.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);
   }
