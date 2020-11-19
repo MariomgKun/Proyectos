@@ -27,20 +27,14 @@
                 <img class="ui small image" src="img/ej1.jpg">
                 <span>Nombre jerarquia</span>
 
-                <form name ="formularioNuevoEquipo" action= "./php/" method="POST">     
-               
-                <div class="ui form">
-                    <div class="field">
-                        <label>Plataforma</label>
-                    <select placeholder="Plataforma" name="Plataforma">
-                        <option value="">Selecciona una opción</option>
-                        <option value="3">Play Station</option>
-                        <option value="2">Xbox</option>
-                        <option value="1">PC</option>
-                        <option value="0">Mobile</option>
-                    </select>
+                <form name ="formularioNuevoEquipo" action= "./php/nuevoEquipo.php" method="POST"> 
+
+                    <div class="fields">
+                        <div class="field">
+                            <label>Nombre del equipo</label>
+                            <input type="text" placeholder="Nombre del equipo" name="TeamName">
+                        </div>
                     </div>
-                </div>
 
                 <div class="fields">
                     <div class="field">
@@ -55,11 +49,11 @@
                 <div class="fields">
                     <div class="field">
                         <label>ID Jugador 3</label>
-                        <input type="text" placeholder="ID de Jugador" name="jugador1">
+                        <input type="text" placeholder="ID de Jugador" name="jugador3">
                     </div>
                     <div class="field">
                         <label>ID Jugador 4 </label>
-                        <input type="text" placeholder="ID de Jugador" name="jugador2">
+                        <input type="text" placeholder="ID de Jugador" name="jugador4">
                     </div>
                 </div>   
             </div>
