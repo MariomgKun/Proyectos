@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2020 a las 22:43:05
+-- Tiempo de generación: 19-11-2020 a las 22:21:40
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -30,11 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `Integrantes` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Puntajes` float NOT NULL,
-  `idPerfil` int(11) NOT NULL
+  `JugadorUno` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorCuatro` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
+(8, 'UniHuevos4', '', 0, 'Madara', 'Edguix', NULL, NULL),
+(9, 'UniHuevos4', '', 0, 'Madara', 'Edguix', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,6 +104,14 @@ CREATE TABLE `perfil` (
   `Plataforma` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`idPerfil`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
+(1, 'Noel ', 'Andrew', 'nepe@gmail.com', 'nepe123', 'Madara', 'Play Station'),
+(2, 'Edgar', 'Hernandez', 'nepe2@gmail.com', 'nepe3', 'Edguix', 'PC');
+
 -- --------------------------------------------------------
 
 --
@@ -119,8 +137,7 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`idEquipo`),
-  ADD KEY `idPerfil` (`idPerfil`);
+  ADD PRIMARY KEY (`idEquipo`);
 
 --
 -- Indices de la tabla `juego`
@@ -162,20 +179,20 @@ ALTER TABLE `torneo`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `equipo`
+--
+ALTER TABLE `equipo`
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`);
 
 --
 -- Filtros para la tabla `moderador`
@@ -187,14 +204,14 @@ ALTER TABLE `moderador`
 -- Filtros para la tabla `partida`
 --
 ALTER TABLE `partida`
-  ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`);
+  ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  ADD CONSTRAINT `torneo_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`),
-  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`),
+  ADD CONSTRAINT `torneo_ibfk_3` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
