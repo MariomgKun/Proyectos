@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2020 a las 23:44:29
+-- Tiempo de generación: 20-11-2020 a las 06:51:42
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
-  `idPerfil` int(11) DEFAULT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Puntajes` float NOT NULL,
@@ -43,19 +42,67 @@ CREATE TABLE `equipo` (
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`idEquipo`, `idPerfil`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
-(10, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(11, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(12, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(13, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(14, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(15, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(16, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(17, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(18, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(19, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(20, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(21, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL);
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
+(10, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(11, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(12, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(13, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(14, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(15, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(16, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(17, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(18, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(19, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(20, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(21, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(22, 'zentenitos', '', 0, 'Madara', '', NULL, NULL),
+(23, 'zentenitos', '', 0, 'Madara', '', NULL, NULL),
+(24, 'zentenitos', '', 0, 'Madara', '', NULL, NULL),
+(25, 'zentenitos', '', 0, 'Madara', '', NULL, NULL),
+(26, 'zentenitos', '', 0, 'Madara', '', NULL, NULL),
+(27, 'zentenitos2', '', 0, 'Madara', '', NULL, NULL),
+(28, 'zentenitos2', '', 0, 'Madara', '', NULL, NULL),
+(29, 'Noelitos', '', 0, 'Madara', '', NULL, NULL),
+(30, 'Noelitos', '', 0, 'Madara', '', NULL, NULL),
+(31, 'Noelitos2', '', 0, 'Madara', '', NULL, NULL),
+(32, 'Noelitos2', '', 0, 'Madara', '', NULL, NULL),
+(33, 'Noelitos2', '', 0, 'Madara', '', NULL, NULL),
+(34, 'Noelitos2', '', 0, 'Madara', '', NULL, NULL),
+(35, 'Noelitos3', '', 0, 'Madara', '', NULL, NULL),
+(36, 'Noelitos3', '', 0, 'Madara', '', NULL, NULL),
+(37, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(38, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(39, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(40, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(41, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(42, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(43, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(44, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(45, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(46, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(47, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(48, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(49, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(50, 'LPMX', '', 0, 'Madara', '', NULL, NULL),
+(51, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(52, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(53, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(54, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(55, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(56, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(57, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(58, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(59, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(60, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(61, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(62, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(63, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(64, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(65, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(66, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(67, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(68, 'LPMXww', '', 0, 'Madara', '', NULL, NULL),
+(69, 'LPMXww', '', 0, 'Madara', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -107,6 +154,7 @@ CREATE TABLE `partida` (
 
 CREATE TABLE `perfil` (
   `idPerfil` int(11) NOT NULL,
+  `idEquipo` int(11) DEFAULT NULL,
   `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Apellido` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Email` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -119,9 +167,9 @@ CREATE TABLE `perfil` (
 -- Volcado de datos para la tabla `perfil`
 --
 
-INSERT INTO `perfil` (`idPerfil`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
-(15, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', ''),
-(16, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', '');
+INSERT INTO `perfil` (`idPerfil`, `idEquipo`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
+(15, 51, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', ''),
+(16, 51, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', '');
 
 -- --------------------------------------------------------
 
@@ -148,8 +196,7 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`idEquipo`),
-  ADD KEY `idPerfil` (`idPerfil`);
+  ADD PRIMARY KEY (`idEquipo`);
 
 --
 -- Indices de la tabla `juego`
@@ -176,7 +223,8 @@ ALTER TABLE `partida`
 -- Indices de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  ADD PRIMARY KEY (`idPerfil`);
+  ADD PRIMARY KEY (`idPerfil`),
+  ADD KEY `idEquipo` (`idEquipo`);
 
 --
 -- Indices de la tabla `torneo`
@@ -194,7 +242,7 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
@@ -207,12 +255,6 @@ ALTER TABLE `perfil`
 --
 
 --
--- Filtros para la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `moderador`
 --
 ALTER TABLE `moderador`
@@ -223,6 +265,12 @@ ALTER TABLE `moderador`
 --
 ALTER TABLE `partida`
   ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `perfil`
+--
+ALTER TABLE `perfil`
+  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `torneo`
