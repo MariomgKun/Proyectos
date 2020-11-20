@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2020 a las 22:43:05
+-- Tiempo de generación: 19-11-2020 a las 23:44:29
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -29,12 +29,33 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
+  `idPerfil` int(11) DEFAULT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `Integrantes` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Puntajes` float NOT NULL,
-  `idPerfil` int(11) NOT NULL
+  `JugadorUno` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `JugadorCuatro` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `equipo`
+--
+
+INSERT INTO `equipo` (`idEquipo`, `idPerfil`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
+(10, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(11, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(12, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(13, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(14, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(15, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(16, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(17, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(18, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(19, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(20, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
+(21, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -93,6 +114,14 @@ CREATE TABLE `perfil` (
   `Gamertag` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Plataforma` varchar(20) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`idPerfil`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
+(15, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', ''),
+(16, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', '');
 
 -- --------------------------------------------------------
 
@@ -162,10 +191,16 @@ ALTER TABLE `torneo`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `equipo`
+--
+ALTER TABLE `equipo`
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
@@ -175,7 +210,7 @@ ALTER TABLE `perfil`
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`);
+  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `moderador`
@@ -187,14 +222,14 @@ ALTER TABLE `moderador`
 -- Filtros para la tabla `partida`
 --
 ALTER TABLE `partida`
-  ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`);
+  ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  ADD CONSTRAINT `torneo_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`),
-  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`),
+  ADD CONSTRAINT `torneo_ibfk_3` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
