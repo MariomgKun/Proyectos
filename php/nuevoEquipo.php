@@ -4,64 +4,49 @@
     $TeamName = $_POST['TeamName'];
     $j1 = $_POST['jugador1'];
     $j2 = $_POST['jugador2'];
-    //$j3 = $_POST['jugador3'];
-    //$j4 = $_POST['jugador4'];
+    $j3 = $_POST['jugador3'];
+    $j4 = $_POST['jugador4'];
 
-<<<<<<< HEAD
-   $query = "INSERT INTO equipo(NombreEquip,JugadorUno,JugadorDos) VALUES('$TeamName','$j1','$j2')";
+   $query = "INSERT INTO equipo(NombreEquip,JugadorUno,JugadorDos,JugadorTres,JugadorCuatro) VALUES('$TeamName','$j1','$j2', '$j3','$j4')";
    $queryid = "SELECT idEquipo FROM equipo WHERE NombreEquip = '$TeamName'";
    $result = mysqli_query($conexion, $queryid);
     $row = mysqli_fetch_assoc($result);
     $id = $row['idEquipo'];
 
+    if($j1 != NULL){
+        
+        $queryJug = " UPDATE perfil 
+        SET idEquipo = '$id' 
+        WHERE Gamertag = '$j1'";
+        $resultado2 = $conexion->query($queryJug);
+    }elseif($j2 != NULL)  {
+        $queryJug2 = " UPDATE perfil 
+        SET idEquipo = '$id' 
+        WHERE Gamertag = '$j2'";
+        $resultado3 = $conexion->query($queryJug2);
+    }elseif($j3 != NULL)  {
+        $queryJug3 = " UPDATE perfil 
+        SET idEquipo = '$id' 
+        WHERE Gamertag = '$j3'";
+        $resultado3 = $conexion->query($queryJug3);
+    }elseif($j4 != NULL)  {
+        $queryJug4 = " UPDATE perfil 
+        SET idEquipo = '$id' 
+        WHERE Gamertag = '$j4'";
+        $resultado3 = $conexion->query($queryJug4);
+    }else{
+        echo "No pasa na";
+    }
 
-  echo "<script type='text/javascript'>alert('$id');</script>";
-
-  $queryJug = " UPDATE perfil 
-   SET idEquipo = '$id' 
-   WHERE Gamertag = '$j1'";
-
-  $resultado = $conexion->query($query);
-
-  $resultado2 = $conexion->query($queryJug);
 
 
-  //if (mysqli_query($conexion, $query)) {
-   // session_start();
-   // $_SESSION["usuario"] =$gamertag ;
-  //  header("location: principal.php");
- // } else {
-  //  echo "Error: " . $query . "<br>" . mysqli_error($conexion);
-  //}
-  
-
-=======
-  $query = "INSERT INTO equipo(NombreEquip,JugadorUno,JugadorDos) VALUES('$TeamName','$j1','$j2')";
-<<<<<<< HEAD
-  //WHERE Gamertag = '$j1'";
-  
-=======
-
->>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
-  $resultado= $conexion->query($query);
-  if (mysqli_query($conexion, $query)) {
+  if (mysqli_query($conexion, $query) && mysqli_query($conexion, $queryJug)) {
     session_start();
     $_SESSION["usuario"] =$gamertag ;
     header("location: principal.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);
   }
-<<<<<<< HEAD
   
-  $resultado= $conexion->query2($query2);
-  if (mysqli_query($conexion, $query2)) {
-    session_start();
-    $_SESSION["usuario"] =$gamertag ;
-    header("location: principal.php");
-  } else {
-    echo "Error: " . $query2 . "<br>" . mysqli_error($conexion);
-  }
-=======
->>>>>>> b63f793f845394bafb2b62936a2ff26aa2a78471
->>>>>>> fd3b6aa7a9e4f24e47f68b0a4821e0103f1b6bc0
+
   ?>
