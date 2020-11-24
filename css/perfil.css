@@ -100,3 +100,9 @@ body {
     color: #ffffff;
     padding: 20px;
 }
+.sigInContainer {
+    background-color: #eee;
+    margin: 0 auto;
+    width: 700px;
+    padding: 20px;
+}
