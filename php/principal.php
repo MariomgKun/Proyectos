@@ -32,7 +32,7 @@
                 <a class="item">Juegos</a>
                 <a class="item">Torneos</a>
                 <a class="item">Clasificaciones</a>
-                <a class="item">Cuenta</a>
+                <a class="item" href="perfil.php">Cuenta</a>
               </div>
         </div>
     </div>

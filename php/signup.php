@@ -6,7 +6,7 @@
     $contraseña = $_POST['Password'];
     $gamertag = $_POST['Gamertag'];
     $contrasenia = $_POST['Password'];
-    
+    $plataf = $_POST['Plataforma'];
       switch ($_POST["Plataforma"]){
         case 0:
            $plataf = "Mobile";
