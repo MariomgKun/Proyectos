@@ -40,9 +40,9 @@
     <br>
     <div class="contImg">
         <div class="ui medium images">
-            <img src="img/ej1.jpg">
-            <img src="img/ej1.jpg">
-            <img src="img/ej1.jpg">
+            <img src="../img/ej1.jpg">
+            <img src="../img/ej1.jpg">
+            <img src="../img/ej1.jpg">
         </div>
     </div>
     
