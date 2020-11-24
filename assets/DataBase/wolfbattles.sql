@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2020 a las 23:44:29
+-- Tiempo de generación: 24-11-2020 a las 03:27:42
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
-  `idPerfil` int(11) DEFAULT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Puntajes` float NOT NULL,
@@ -43,19 +42,10 @@ CREATE TABLE `equipo` (
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`idEquipo`, `idPerfil`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
-(10, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(11, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(12, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(13, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(14, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(15, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(16, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(17, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(18, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(19, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(20, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL),
-(21, NULL, 'UniHuevos', '', 0, 'Madara', '', NULL, NULL);
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
+(79, 'UH', '', 0, 'Madara', '', '', ''),
+(80, 'UH', '', 0, 'Madara', '', '', ''),
+(81, 'UH', '', 0, 'Madara', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -107,6 +97,7 @@ CREATE TABLE `partida` (
 
 CREATE TABLE `perfil` (
   `idPerfil` int(11) NOT NULL,
+  `idEquipo` int(11) DEFAULT NULL,
   `Nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Apellido` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Email` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
@@ -119,9 +110,9 @@ CREATE TABLE `perfil` (
 -- Volcado de datos para la tabla `perfil`
 --
 
-INSERT INTO `perfil` (`idPerfil`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
-(15, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', ''),
-(16, 'Noel', 'Andrew', 'nepe@gmail.com', 'nepeeee', 'Madara', '');
+INSERT INTO `perfil` (`idPerfil`, `idEquipo`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
+(21, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
+(22, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', '');
 
 -- --------------------------------------------------------
 
@@ -148,8 +139,7 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`idEquipo`),
-  ADD KEY `idPerfil` (`idPerfil`);
+  ADD PRIMARY KEY (`idEquipo`);
 
 --
 -- Indices de la tabla `juego`
@@ -176,7 +166,8 @@ ALTER TABLE `partida`
 -- Indices de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  ADD PRIMARY KEY (`idPerfil`);
+  ADD PRIMARY KEY (`idPerfil`),
+  ADD KEY `idEquipo` (`idEquipo`);
 
 --
 -- Indices de la tabla `torneo`
@@ -194,23 +185,17 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idPerfil`) REFERENCES `perfil` (`idPerfil`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `moderador`
@@ -223,6 +208,12 @@ ALTER TABLE `moderador`
 --
 ALTER TABLE `partida`
   ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `perfil`
+--
+ALTER TABLE `perfil`
+  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `torneo`
