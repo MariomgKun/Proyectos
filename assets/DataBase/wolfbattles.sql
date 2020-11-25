@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2020 a las 03:27:42
+-- Tiempo de generación: 25-11-2020 a las 07:38:47
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -35,17 +35,18 @@ CREATE TABLE `equipo` (
   `JugadorUno` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `JugadorCuatro` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL
+  `JugadorCuatro` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `idTorneo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`) VALUES
-(79, 'UH', '', 0, 'Madara', '', '', ''),
-(80, 'UH', '', 0, 'Madara', '', '', ''),
-(81, 'UH', '', 0, 'Madara', '', '', '');
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`, `idTorneo`) VALUES
+(79, 'UH', '', 0, 'Madara', '', '', '', NULL),
+(80, 'UH', '', 0, 'Madara', '', '', '', NULL),
+(81, 'UH', '', 0, 'Madara', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -112,7 +113,9 @@ CREATE TABLE `perfil` (
 
 INSERT INTO `perfil` (`idPerfil`, `idEquipo`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Gamertag`, `Plataforma`) VALUES
 (21, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
-(22, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', '');
+(22, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
+(23, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', ''),
+(24, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', '');
 
 -- --------------------------------------------------------
 
@@ -126,7 +129,6 @@ CREATE TABLE `torneo` (
   `Modalidad` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaFin` date NOT NULL,
-  `idEquipo` int(11) NOT NULL,
   `idJuego` int(11) NOT NULL,
   `idTorneo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -139,7 +141,8 @@ CREATE TABLE `torneo` (
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`idEquipo`);
+  ADD PRIMARY KEY (`idEquipo`),
+  ADD KEY `idTorneo` (`idTorneo`);
 
 --
 -- Indices de la tabla `juego`
@@ -174,7 +177,6 @@ ALTER TABLE `perfil`
 --
 ALTER TABLE `torneo`
   ADD PRIMARY KEY (`idTorneo`),
-  ADD KEY `idEquipo` (`idEquipo`),
   ADD KEY `idJuego` (`idJuego`);
 
 --
@@ -191,7 +193,7 @@ ALTER TABLE `equipo`
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restricciones para tablas volcadas
@@ -220,7 +222,7 @@ ALTER TABLE `perfil`
 --
 ALTER TABLE `torneo`
   ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`),
-  ADD CONSTRAINT `torneo_ibfk_3` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `torneo_ibfk_3` FOREIGN KEY (`idTorneo`) REFERENCES `equipo` (`idTorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
