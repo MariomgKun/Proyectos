@@ -37,7 +37,22 @@
                     <img class="ui avatar image" src="img/ej2.jpg">
                     <div class="content">
                         <a class="header">Solo</a>
-                        <div class="description">Partida 1</div>
+                        <?php
+                        include("Conexion.php");    
+                        $modalidad="Solo";
+                        $query = "SELECT * FROM torneo Where Modalidad =  '$modalidad'";
+                        $resultado= $conexion->query($query);
+                        if($resultado){
+                            while ($row = mysqli_fetch_assoc($resultado)) {
+                                echo "<div class='description'>$row[NombreTorneo] <a href= 'Vertorneo.php?id=$row[idTorneo]'>registrarse</a></div>";
+                            }
+                          
+                        }else{
+                           echo "popo";
+                        }
+
+                        ?>
+                        
                     </div>
                 </div>
                 <div class="item">

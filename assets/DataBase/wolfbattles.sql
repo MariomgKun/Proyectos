@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2020 a las 07:38:47
+-- Tiempo de generación: 25-11-2020 a las 18:28:26
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -60,6 +60,13 @@ CREATE TABLE `juego` (
   `Imagen` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `Informacion` varchar(200) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `juego`
+--
+
+INSERT INTO `juego` (`idJuego`, `NombreJuego`, `Imagen`, `Informacion`) VALUES
+(1, 'mw', 'nepe', 'nepe');
 
 -- --------------------------------------------------------
 
@@ -200,6 +207,12 @@ ALTER TABLE `perfil`
 --
 
 --
+-- Filtros para la tabla `equipo`
+--
+ALTER TABLE `equipo`
+  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idTorneo`) REFERENCES `torneo` (`idTorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Filtros para la tabla `moderador`
 --
 ALTER TABLE `moderador`
@@ -221,8 +234,7 @@ ALTER TABLE `perfil`
 -- Filtros para la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`),
-  ADD CONSTRAINT `torneo_ibfk_3` FOREIGN KEY (`idTorneo`) REFERENCES `equipo` (`idTorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
