@@ -28,10 +28,10 @@
 
   $query = "INSERT INTO perfil(Email,Contraseña,Gamertag,Plataforma,Nombre,Apellido) VALUES('$email','$contraseña','$gamertag','$plataf','$nombre','$apellido')";
 
-  $resultado= $conexion->query($query);
+
   if (mysqli_query($conexion, $query)) {
     session_start();
-    $_SESSION["usuario"] =$gamertag ;
+    $_SESSION["gamertag"] =$gamertag ;
     header("location: principal.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);

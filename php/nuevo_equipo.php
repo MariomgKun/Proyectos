@@ -3,14 +3,12 @@
 <head>
     <title>Nuevo Equipo</title>
     <meta charset="UTF-8">  
-   
-	<link rel="stylesheet" href="css/semantic.min.css">
-	<link rel="stylesheet" href="css/semantic.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="js/jquery-3.5.1.min.js">
-	<link rel="stylesheet" href="js/semantic.js">
-    <link rel="stylesheet" href="js/semantic.min.js">
-    <script src= "js/jquery.js"></script>
+    <link rel="stylesheet" href="../css/semantic.min.css">
+	<link rel="stylesheet" href="../css/semantic.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../js/jquery-3.5.1.min.js">
+	<link rel="stylesheet" href="../js/semantic.js">
+    <link rel="stylesheet" href="../js/semantic.min.js">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
 		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 		crossorigin="anonymous"></script>
@@ -19,7 +17,7 @@
 <body>
 	<!--Menu superior-->
 	<div class="ui menu">
-		<a class="item" href="index.html">WolfBattles</a>
+		<a class="item" href="principal.php">WolfBattles</a>
 	</div>
 
     <br>

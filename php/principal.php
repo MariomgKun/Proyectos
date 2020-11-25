@@ -17,15 +17,14 @@
 <body>
 	<!--Menu superior-->
 	<div class="ui menu">	
-        <a class="item" href="principal.html">WolfBattles</a>
+        <a class="item" href="principal.php">WolfBattles</a>
         <?php
         session_start();
-        $aux= $_SESSION['usuario'];
+        $aux= $_SESSION['Gamertag'];
         echo "<a class='item' > $aux </a>"; 
-
         ?>
 		<div class="right menu">
-		  <a class="item" href="index.html">Salir</a>
+		  <a class="item" href="logout.php">Salir</a>
 		</div>
 	</div>
 
@@ -33,10 +32,10 @@
         <br><br>
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-                <a class="item">Juegos</a>
-                <a class="item">Torneos</a>
-                <a class="item">Clasificaciones</a>
-                <a class="item">Cuenta</a>
+            <a class="item">Juegos</a>
+				<a class="item" href="torneos.php">Torneos</a>
+                <a class="item" href="clasificacion.php">Clasificaciones</a>
+				<a class="item" href="perfil.php">Cuenta</a>
               </div>
         </div>
     </div>
