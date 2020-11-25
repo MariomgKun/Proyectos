@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Perfil</title>
+	<title>Juegos</title>
 	<link rel="stylesheet" href="../css/semantic.min.css">
 	<link rel="stylesheet" href="../css/semantic.css">
 	<link rel="stylesheet" href="../css/perfil.css">

@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
 		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 		crossorigin="anonymous"></script>
-	<script src="js/semantic.min.js"></script>
+	<script src="../js/semantic.min.js"></script>
 </head>
 <body>
 	<!--Menu superior-->
@@ -34,36 +34,37 @@
             <center><h1>Lista de Torneos</h1></center>
             <div class="ui middle aligned selection list">
                 <div class="item">
-                    <img class="ui avatar image" src="img/ej2.jpg">
+                    <img class="ui avatar image" src="../img/ej2.jpg">
                     <div class="content">
                         <a class="header">Solo</a>
-                        <?php
-                        include("Conexion.php");    
-                        $modalidad="Solo";
-                        $query = "SELECT * FROM torneo Where Modalidad =  '$modalidad'";
-                        $resultado= $conexion->query($query);
-                        if($resultado){
-                            while ($row = mysqli_fetch_assoc($resultado)) {
-                                echo "<div class='description'>$row[NombreTorneo] <a href= 'Vertorneo.php?id=$row[idTorneo]'>registrarse</a></div>";
+                        <div class="description">
+                            <?php
+                            include("Conexion.php");    
+                            $modalidad="Solo";
+                            $query = "SELECT * FROM torneo Where Modalidad =  '$modalidad'";
+                            $resultado= $conexion->query($query);
+                            if($resultado){
+                                while ($row = mysqli_fetch_assoc($resultado)) {
+                                    echo "<div class='description'>$row[NombreTorneo] <a href= 'Vertorneo.php?id=$row[idTorneo]'>registrarse</a></div>";
+                                }
+                            
+                            }else{
+                            echo "popo";
                             }
-                          
-                        }else{
-                           echo "popo";
-                        }
 
-                        ?>
-                        
+                            ?>
+                        </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="ui avatar image" src="img/ej2.jpg">
+                    <img class="ui avatar image" src="../img/ej2.jpg">
                     <div class="content">
                         <a class="header">Duo</a>
                         <div class="description">Partida 2</div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="ui avatar image" src="img/ej2.jpg">
+                    <img class="ui avatar image" src="../img/ej2.jpg">
                     <div class="content">
                         <a class="header">Equipo</a>
                         <div class="description">Partida 3</div>
