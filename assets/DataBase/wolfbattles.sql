@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2020 a las 18:28:26
+-- Tiempo de generación: 25-11-2020 a las 23:55:09
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -94,7 +94,9 @@ CREATE TABLE `partida` (
   `Detalles` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `Score` int(11) NOT NULL,
   `idToreno` int(11) NOT NULL,
-  `idEquipo` int(11) NOT NULL
+  `idEquipo` int(11) NOT NULL,
+  `prueba1` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `prueba2` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
