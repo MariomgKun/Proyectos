@@ -29,39 +29,37 @@
 	<div class="contForm">
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-				<a class="item">Juegos</a>
-				<a class="item" href="torneos.html">Torneos</a>
-                <a class="item" href="clasificacion.php">Clasificaciones</a>
-                <a class="item" href="perfil.html">Cuenta</a>
+				<a class="item" href="juegos.php">Juegos</a>
+				<a class="item" href="torneos.php">Torneos</a>
+        <a class="item" href="clasificacion.php">Clasificaciones</a>
+        <a class="item" href="perfil.html">Cuenta</a>
 			</div>
 			<div class="contForm">
 				<div class="sigInContainer">
 					<div class="ui top attached tabular menu">
 						<a class="item active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-						  Perfil
-                        </font>
-                    </font>   
-                    </a>
-                     </div>
-                          <?php
-                         $query = "SELECT * FROM perfil WHERE Gamertag= '$aux'";
-                         $resultado= $conexion->query($query);
-
-                        if ($resultado->num_rows > 0) {
-                            while($row = $resultado->fetch_assoc()) {
-                            echo "id: " . $row["idPerfil"]."</br>Nombre: " . $row["Nombre"]. " " . $row["Apellido"]. "</br>Email: " . $row["Email"]. "</br>Gamertag: " . $row["Gamertag"]. "<br>";
-                            }
-                        } else {
-                            echo "0 results";
-                        }
-                        ?>
-						    </div>
-					    </div>
+						  Perfil</font></font> </a>
+              </div>
 					  <div class="ui bottom attached segment">
-						<p></p>
+              <p></p>
+              <?php
+                $query = "SELECT * FROM perfil WHERE Gamertag= '$aux'";
+                $resultado= $conexion->query($query);
+
+                if ($resultado->num_rows > 0) {
+                while($row = $resultado->fetch_assoc()) {
+                  echo 
+                  '<div class="ui raised segments"><div class="ui segment"><p>id: ' . $row["idPerfil"].
+                  '</div><div class="ui segment"></p><p>Nombre: ' . $row["Nombre"]. " " . $row["Apellido"]. 
+                  '</div><div class="ui segment"></p><p>Email:  '. $row["Email"]. 
+                  '</div><div class="ui segment"></p><p>Gamertag: ' . $row["Gamertag"]. '</p></div></div>';
+                }
+                } else {
+                echo "0 results";
+              }?>
 					  </div>
-		</div>
-		</div>
+		    </div>
+		  </div>
 		</div>
 
     </div>

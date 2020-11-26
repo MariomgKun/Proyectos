@@ -39,40 +39,36 @@
 						<a class="item active"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 						  Clasificaciones
 						</font></font></a>
-						<div class="right menu">
-							
-						  <div class="item">
-							<div class="ui transparent icon input">
-							<?php
-							  $query = "SELECT idEquipo FROM perfil WHERE Gamertag = '$aux'"; 
-							  $result = mysqli_query($conexion, $query);
-								$row = mysqli_fetch_assoc($result);
-								$id = $row['idEquipo'];
+					</div>
+					
+					<div class="ui bottom attached segment">
+						<p></p>
+						<?php
+							$query = "SELECT idEquipo FROM perfil WHERE Gamertag = '$aux'"; 
+							$result = mysqli_query($conexion, $query);
+							$row = mysqli_fetch_assoc($result);
+							$id = $row['idEquipo'];
 
-								echo "<script type='text/javascript'>alert('$id');</script>";
+							/*echo "<script type='text/javascript'>alert('$id');</script>";*/
 
-							  $query2 = "SELECT NombreEquip, TorneosInscritos, Puntajes FROM equipo WHERE idEquipo = '$id'"; 
-							  $resultado2 = $conexion->query($query2);
+							$query2 = "SELECT NombreEquip, TorneosInscritos, Puntajes FROM equipo WHERE idEquipo = '$id'"; 
+							$resultado2 = $conexion->query($query2);
 
-							  if ($resultado2->num_rows > 0) {
+							if ($resultado2->num_rows > 0) {
 								while($row = $resultado2->fetch_assoc()) {
-								echo "Nombre del equipo: " . $row["NombreEquip"]."</br>Torneos Inscritos: " . $row["TorneosInscritos"]. "</br>Puntajes:" . $row["Puntajes"]. "</br>";
+								echo 
+								'<div class="ui raised segments"><div class="ui segment"><p>Nombre del equipo: ' . $row["NombreEquip"].
+								'</div><div class="ui segment"></p><p>Torneos Inscritos: ' . $row["TorneosInscritos"]. 
+								'</div><div class="ui segment"></p><p>Puntajes:' . $row["Puntajes"]. '</p></div></div>';
 								}
 							} else {
 								echo "0 results";
 							}
-							?>
-							</div>
-							
-						  </div>
-						</div>
-					  </div>
-					  <div class="ui bottom attached segment">
-						<p></p>
-					  </div>
-		</div>
-		</div>
-        </div>
+						?>
+					</div>
+				</div>
+			</div>
+    	</div>
         
     </div>
 	
