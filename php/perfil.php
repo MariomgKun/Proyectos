@@ -20,9 +20,9 @@
     </div>
     <?php
       include("Conexion.php");
-        session_start();
-        $aux= $_SESSION['usuario'];
-        echo "<a class='item' > $aux </a>"; 
+      session_start();
+      $aux= $_SESSION['Gamertag'];
+      echo "<a class='item' > $aux </a>"; 
 
         ?>
 
@@ -31,7 +31,7 @@
             <div class="ui black four item inverted menu">
 				<a class="item">Juegos</a>
 				<a class="item" href="torneos.html">Torneos</a>
-                <a class="item" href="clasificacion.html">Clasificaciones</a>
+                <a class="item" href="clasificacion.php">Clasificaciones</a>
                 <a class="item" href="perfil.html">Cuenta</a>
 			</div>
 			<div class="contForm">
