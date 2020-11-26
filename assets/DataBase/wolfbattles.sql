@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2020 a las 21:28:59
+-- Tiempo de generación: 26-11-2020 a las 19:27:38
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `Puntajes` float DEFAULT NULL,
+  `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `Puntajes` float NOT NULL,
   `JugadorUno` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -124,10 +124,7 @@ INSERT INTO `perfil` (`idPerfil`, `idEquipo`, `Nombre`, `Apellido`, `Email`, `Co
 (21, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
 (22, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
 (23, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', ''),
-(24, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', ''),
-(25, NULL, 'noel', 'ortiz', 'nepe@supernepe.com', 'nepelico', 'Don nepe', '3'),
-(26, NULL, 'noel', 'ortiz', 'nepe@supernepe.com', 'nepelico', 'Don nepe', '3'),
-(27, NULL, 'dadsw', 'dqdqwd', 'anjdadn@ldid.com', 'eweqwe', 'asdad', '');
+(24, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', '');
 
 -- --------------------------------------------------------
 
@@ -217,7 +214,7 @@ ALTER TABLE `partida`
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `torneo`
