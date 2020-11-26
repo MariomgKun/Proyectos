@@ -15,9 +15,22 @@
 </head>
 <body>
 	<!--Menu superior-->
-	<div class="ui menu">
-		<a class="item" href="index.html">WolfBattles</a>
-	</div>
+	<div class="ui menu">	
+        <a class="item" href="principal.php">WolfBattles</a>
+        <?php
+        session_start();
+        $aux= $_SESSION['Gamertag'];
+        echo "<a class='item' > $aux </a>"; 
+        ?>
+		<div class="right menu">
+		  <a class="item" href="logout.php">Salir</a>
+		</div>
+    </div>
+    <?php
+    include("Conexion.php");
+    session_start();
+    $aux= $_SESSION['usuario'];
+    ?>
 
 	<div class="contForm">
         <div class="contPortada">

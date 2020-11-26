@@ -26,7 +26,12 @@
 		<div class="right menu">
 		  <a class="item" href="logout.php">Salir</a>
 		</div>
-	</div>
+    </div>
+    <?php
+    include("Conexion.php");
+    session_start();
+    $aux= $_SESSION['usuario'];
+    ?>
 
     <div class="portada2">
         <br><br>
@@ -36,7 +41,7 @@
 				<a class="item" href="torneos.php">Torneos</a>
                 <a class="item" href="clasificacion.php">Clasificaciones</a>
 				<a class="item" href="perfil.php">Cuenta</a>
-              </div>
+            </div>
         </div>
     </div>
     

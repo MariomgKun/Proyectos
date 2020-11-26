@@ -15,22 +15,29 @@
 </head>
 <body>
 	<!--Menu superior-->
-	<div class="ui menu">
-		<a class="item" href="./principal.php">WolfBattles</a>
+	<div class="ui menu">	
+        <a class="item" href="principal.php">WolfBattles</a>
+        <?php
+        session_start();
+        $aux= $_SESSION['Gamertag'];
+        echo "<a class='item' > $aux </a>"; 
+        ?>
+		<div class="right menu">
+		  <a class="item" href="logout.php">Salir</a>
+		</div>
 	</div>
 	<?php 
-		   include("Conexion.php");
-		   session_start();
-		   $aux= $_SESSION['Gamertag'];
-		   echo "<a class='item' > $aux </a>"; 
-		?>
+	include("Conexion.php");
+	session_start();
+	$aux= $_SESSION['Gamertag'];
+	?>
 	<div class="contForm">
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-			<a class="item" href="./juegos.php">Juegos</a>
-				<a class="item" href="./torneos.php">Torneos</a>
-                <a class="item" href="./clasificacion.php">Clasificaciones</a>
-				<a class="item" href="./perfil.php">Cuenta</a>
+			<a class="item" href="juegos.php">Juegos</a>
+				<a class="item" href="torneos.php">Torneos</a>
+                <a class="item" href="clasificacion.php">Clasificaciones</a>
+				<a class="item" href="perfil.php">Cuenta</a>
 			</div>
 			
 			<div class="contForm">
