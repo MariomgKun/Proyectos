@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2020 a las 06:44:06
+-- Tiempo de generación: 26-11-2020 a las 19:27:38
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -80,7 +80,7 @@ CREATE TABLE `moderador` (
   `CorreoMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `ContraseñaMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `NombreMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `idJuego` int(11) NOT NULL
+  `idPartida` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -165,7 +165,7 @@ ALTER TABLE `juego`
 --
 ALTER TABLE `moderador`
   ADD PRIMARY KEY (`idMod`),
-  ADD KEY `idJuego` (`idJuego`);
+  ADD KEY `idJuego` (`idPartida`);
 
 --
 -- Indices de la tabla `partida`
@@ -197,6 +197,12 @@ ALTER TABLE `torneo`
 --
 ALTER TABLE `equipo`
   MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT de la tabla `juego`
+--
+ALTER TABLE `juego`
+  MODIFY `idJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `partida`
@@ -231,7 +237,7 @@ ALTER TABLE `equipo`
 -- Filtros para la tabla `moderador`
 --
 ALTER TABLE `moderador`
-  ADD CONSTRAINT `moderador_ibfk_1` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `moderador_ibfk_1` FOREIGN KEY (`idMod`) REFERENCES `partida` (`idPartida`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `perfil`
@@ -243,7 +249,7 @@ ALTER TABLE `perfil`
 -- Filtros para la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `torneo_ibfk_1` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

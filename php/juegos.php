@@ -44,9 +44,9 @@
             $query = "SELECT * FROM juego";
             $resultado= $conexion->query($query);
             if($resultado){
+                echo " <div class='ui five column grid'>";
                 while ($row = mysqli_fetch_assoc($resultado)) {
                     echo " 
-            <div class='ui five column grid'>
                     <div class='column'>
                         <div class='ui special cards'>
                             <div class='card'>
@@ -65,8 +65,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-            ";
+                   
+            "; 
+            echo "</div>";
                 }
             
             }else{
