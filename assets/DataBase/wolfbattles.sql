@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2020 a las 23:55:09
+-- Tiempo de generación: 26-11-2020 a las 06:44:06
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -36,17 +36,18 @@ CREATE TABLE `equipo` (
   `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorCuatro` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `idTorneo` int(11) DEFAULT NULL
+  `idTorneo` int(11) DEFAULT NULL,
+  `idPartida` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `equipo`
 --
 
-INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`, `idTorneo`) VALUES
-(79, 'UH', '', 0, 'Madara', '', '', '', NULL),
-(80, 'UH', '', 0, 'Madara', '', '', '', NULL),
-(81, 'UH', '', 0, 'Madara', '', '', '', NULL);
+INSERT INTO `equipo` (`idEquipo`, `NombreEquip`, `TorneosInscritos`, `Puntajes`, `JugadorUno`, `JugadorDos`, `JugadorTres`, `JugadorCuatro`, `idTorneo`, `idPartida`) VALUES
+(79, 'UH', '', 0, 'Madara', '', '', '', NULL, NULL),
+(80, 'UH', '', 0, 'Madara', '', '', '', NULL, NULL),
+(81, 'UH', '', 0, 'Madara', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,9 +95,8 @@ CREATE TABLE `partida` (
   `Detalles` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
   `Score` int(11) NOT NULL,
   `idToreno` int(11) NOT NULL,
-  `idEquipo` int(11) NOT NULL,
-  `prueba1` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `prueba2` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL
+  `prueba1` blob DEFAULT NULL,
+  `prueba2` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -151,7 +151,8 @@ CREATE TABLE `torneo` (
 --
 ALTER TABLE `equipo`
   ADD PRIMARY KEY (`idEquipo`),
-  ADD KEY `idTorneo` (`idTorneo`);
+  ADD KEY `idTorneo` (`idTorneo`),
+  ADD KEY `idPartida` (`idPartida`);
 
 --
 -- Indices de la tabla `juego`
@@ -171,8 +172,7 @@ ALTER TABLE `moderador`
 --
 ALTER TABLE `partida`
   ADD PRIMARY KEY (`idPartida`),
-  ADD KEY `idToreno` (`idToreno`),
-  ADD KEY `idEquipo` (`idEquipo`);
+  ADD KEY `idToreno` (`idToreno`);
 
 --
 -- Indices de la tabla `perfil`
@@ -199,10 +199,22 @@ ALTER TABLE `equipo`
   MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
+-- AUTO_INCREMENT de la tabla `partida`
+--
+ALTER TABLE `partida`
+  MODIFY `idPartida` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
   MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de la tabla `torneo`
+--
+ALTER TABLE `torneo`
+  MODIFY `idTorneo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -212,19 +224,14 @@ ALTER TABLE `perfil`
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`idTorneo`) REFERENCES `torneo` (`idTorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `equipo_ibfk_2` FOREIGN KEY (`idPartida`) REFERENCES `partida` (`idPartida`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `equipo_ibfk_3` FOREIGN KEY (`idTorneo`) REFERENCES `torneo` (`idTorneo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `moderador`
 --
 ALTER TABLE `moderador`
   ADD CONSTRAINT `moderador_ibfk_1` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
-
---
--- Filtros para la tabla `partida`
---
-ALTER TABLE `partida`
-  ADD CONSTRAINT `partida_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `perfil`

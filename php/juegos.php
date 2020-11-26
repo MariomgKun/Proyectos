@@ -22,10 +22,10 @@
 	<div class="contForm">
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-				<a class="item">Juegos</a>
-				<a class="item" href="torneos.html">Torneos</a>
-                <a class="item" href="clasificacion.html">Clasificaciones</a>
-                <a class="item" href="perfil.html">Cuenta</a>
+            <a class="item" href="juegos.php">Juegos</a>
+				<a class="item" href="torneos.php">Torneos</a>
+                <a class="item" href="clasificacion.php">Clasificaciones</a>
+				<a class="item" href="perfil.php">Cuenta</a>
 			</div>
 			<!-- <div class="contForm">
 				<div class="sigInContainer">
@@ -35,396 +35,47 @@
 			</div> -->
 
             <!-- Imagenes columna 1-->
-                <div class="ui five column grid">
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 2</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 3</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 4</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 5</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- columna2 -->
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 6</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 7</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 8</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 9</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 10</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- columna 3 -->
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 11</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 12</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 13</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 14</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 15</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- columna 4 -->
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 16</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 17</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 18</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 19</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui special cards">
-                            <div class="card">
-                                <div class="blurring dimmable image">
-                                    <div class="ui dimmer">
-                                        <div class="content">
-                                            <div class="center">
-                                                <p>Info del juego</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img src="../img/ej3.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">Juego 20</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            <!--Fin imagenes  -->
+            <?php
 
+            //SELECT * FROM `juego` 
+            include("Conexion.php");    
 
+            $query = "SELECT * FROM juego";
+            $resultado= $conexion->query($query);
+            if($resultado){
+                while ($row = mysqli_fetch_assoc($resultado)) {
+                    echo " 
+            <div class='ui five column grid'>
+                    <div class='column'>
+                        <div class='ui special cards'>
+                            <div class='card'>
+                                <div class='blurring dimmable image'>
+                                    <div class='ui dimmer'>
+                                        <div class='content'>
+                                            <div class='center'>
+                                                <p> $row[Informacion]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img src='../img/$row[Imagen]'>
+                                </div>
+                                <div class='content'>
+                                    <a class='header' href='juego.php?id=$row[idJuego]. '> $row[NombreJuego]</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            ";
+                }
             
+            }else{
+            echo "popo";
+            }
+             ?>
+
+
+
 		</div>
 
     </div>
