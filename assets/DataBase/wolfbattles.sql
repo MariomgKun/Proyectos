@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2020 a las 06:44:06
+-- Tiempo de generación: 26-11-2020 a las 21:28:59
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `equipo` (
   `idEquipo` int(11) NOT NULL,
   `NombreEquip` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `Puntajes` float NOT NULL,
+  `TorneosInscritos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Puntajes` float DEFAULT NULL,
   `JugadorUno` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorDos` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `JugadorTres` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE `moderador` (
   `CorreoMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `ContraseñaMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `NombreMod` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `idJuego` int(11) NOT NULL
+  `idPartida` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -124,7 +124,10 @@ INSERT INTO `perfil` (`idPerfil`, `idEquipo`, `Nombre`, `Apellido`, `Email`, `Co
 (21, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
 (22, 79, 'Noel', 'Andrew', 'npe@gmail.com', 'nepee', 'Madara', ''),
 (23, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', ''),
-(24, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', '');
+(24, NULL, 'Noel', 'Andrew', 'nepe@nepe.com', '1234', 'xAndrew', ''),
+(25, NULL, 'noel', 'ortiz', 'nepe@supernepe.com', 'nepelico', 'Don nepe', '3'),
+(26, NULL, 'noel', 'ortiz', 'nepe@supernepe.com', 'nepelico', 'Don nepe', '3'),
+(27, NULL, 'dadsw', 'dqdqwd', 'anjdadn@ldid.com', 'eweqwe', 'asdad', '');
 
 -- --------------------------------------------------------
 
@@ -165,7 +168,7 @@ ALTER TABLE `juego`
 --
 ALTER TABLE `moderador`
   ADD PRIMARY KEY (`idMod`),
-  ADD KEY `idJuego` (`idJuego`);
+  ADD KEY `idJuego` (`idPartida`);
 
 --
 -- Indices de la tabla `partida`
@@ -199,6 +202,12 @@ ALTER TABLE `equipo`
   MODIFY `idEquipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
+-- AUTO_INCREMENT de la tabla `juego`
+--
+ALTER TABLE `juego`
+  MODIFY `idJuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `partida`
 --
 ALTER TABLE `partida`
@@ -208,7 +217,7 @@ ALTER TABLE `partida`
 -- AUTO_INCREMENT de la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `torneo`
@@ -231,7 +240,7 @@ ALTER TABLE `equipo`
 -- Filtros para la tabla `moderador`
 --
 ALTER TABLE `moderador`
-  ADD CONSTRAINT `moderador_ibfk_1` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `moderador_ibfk_1` FOREIGN KEY (`idMod`) REFERENCES `partida` (`idPartida`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `perfil`
@@ -243,7 +252,7 @@ ALTER TABLE `perfil`
 -- Filtros para la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  ADD CONSTRAINT `torneo_ibfk_2` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`);
+  ADD CONSTRAINT `torneo_ibfk_1` FOREIGN KEY (`idJuego`) REFERENCES `juego` (`idJuego`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

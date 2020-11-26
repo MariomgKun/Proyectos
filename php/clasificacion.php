@@ -16,16 +16,21 @@
 <body>
 	<!--Menu superior-->
 	<div class="ui menu">
-		<a class="item" href="principal.php">WolfBattles</a>
+		<a class="item" href="./principal.php">WolfBattles</a>
 	</div>
-
+	<?php 
+		   include("Conexion.php");
+		   session_start();
+		   $aux= $_SESSION['Gamertag'];
+		   echo "<a class='item' > $aux </a>"; 
+		?>
 	<div class="contForm">
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-			<a class="item" href="juegos.php">Juegos</a>
-				<a class="item" href="torneos.php">Torneos</a>
-                <a class="item" href="clasificacion.php">Clasificaciones</a>
-				<a class="item" href="perfil.php">Cuenta</a>
+			<a class="item" href="./juegos.php">Juegos</a>
+				<a class="item" href="./torneos.php">Torneos</a>
+                <a class="item" href="./clasificacion.php">Clasificaciones</a>
+				<a class="item" href="./perfil.php">Cuenta</a>
 			</div>
 			
 			<div class="contForm">
@@ -35,9 +40,28 @@
 						  Clasificaciones
 						</font></font></a>
 						<div class="right menu">
+							
 						  <div class="item">
 							<div class="ui transparent icon input">
-							 
+							<?php
+							  $query = "SELECT idEquipo FROM perfil WHERE Gamertag = '$aux'"; 
+							  $result = mysqli_query($conexion, $query);
+								$row = mysqli_fetch_assoc($result);
+								$id = $row['idEquipo'];
+
+								echo "<script type='text/javascript'>alert('$id');</script>";
+
+							  $query2 = "SELECT NombreEquip, TorneosInscritos, Puntajes FROM equipo WHERE idEquipo = '$id'"; 
+							  $resultado2 = $conexion->query($query2);
+
+							  if ($resultado2->num_rows > 0) {
+								while($row = $resultado2->fetch_assoc()) {
+								echo "Nombre del equipo: " . $row["NombreEquip"]."</br>Torneos Inscritos: " . $row["TorneosInscritos"]. "</br>Puntajes:" . $row["Puntajes"]. "</br>";
+								}
+							} else {
+								echo "0 results";
+							}
+							?>
 							</div>
 							
 						  </div>
