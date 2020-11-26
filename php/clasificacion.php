@@ -22,7 +22,7 @@
 	<div class="contForm">
         <div class="contPortada">
             <div class="ui black four item inverted menu">
-			<a class="item">Juegos</a>
+			<a class="item" href="juegos.php">Juegos</a>
 				<a class="item" href="torneos.php">Torneos</a>
                 <a class="item" href="clasificacion.php">Clasificaciones</a>
 				<a class="item" href="perfil.php">Cuenta</a>
