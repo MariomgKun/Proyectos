@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Torneo</title>
+	<title>Partida</title>
 	<link rel="stylesheet" href="../css/semantic.min.css">
 	<link rel="stylesheet" href="../css/semantic.css">
-	<link rel="stylesheet" href="../css/perfil.css">
+	<link rel="stylesheet" href="../css/partida.css">
 	<link rel="stylesheet" href="../js/jquery-3.5.1.min.js">
 	<link rel="stylesheet" href="../js/semantic.js">
   <link rel="stylesheet" href="../js/semantic.min.js">
@@ -36,29 +36,23 @@
 			</div>
 			<div class="contForm">
 				<div class="sigInContainer">
-                <center>
-                <img class="ui top aligned tiny image" src="../img/ej3.jpg">
-                <br><span>Juego</span>
-                <div class="ui divider"></div></center>
-                    
-                <table class="ui celled table">
-                    <thead>
-                        <tr>
-                            <th>Participantes</th>
-                            <th>Top 10</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td data-label="Name">Jugador1</td>
-                            <td data-label="Age">Jugador1</td>
-                        </tr>
-                        <tr>
-                            <td data-label="Name">Jugador2</td>
-                            <td data-label="Age">Jugador2</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <!-- <div class="ui placeholder segment">
+                        <div class="ui icon header">
+                            <i class="file image icon"></i>
+                            No documents are listed for this customer. 
+                        </div>
+                        <div class="ui primary button">Add Document</div>
+                    </div> -->
+                    <form name="MiForm" id="MiForm" method="post" action="cargar.php" enctype="multipart/form-data">
+                        <h4 class="text-center"> Seleccione imagen a cargar </h4>
+                        <div class="form-group">
+                        <label class="col-sm-2 control-label"> Archivos </label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control" id="image" name="image" multiple>
+                                <button name="submit" class="ui primary button">Cargar Imagen</button>
+                            </div>
+                        </div>
+                    </form>
 
 		        </div>
 		    </div>

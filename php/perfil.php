@@ -55,8 +55,8 @@
                             echo "0 results";
                         }
                         ?>
-						</div>
-					  </div>
+						    </div>
+					    </div>
 					  <div class="ui bottom attached segment">
 						<p></p>
 					  </div>
