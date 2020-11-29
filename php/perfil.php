@@ -64,7 +64,7 @@
                 echo "0 results";
               }?>
               <!-- Boton eliminar -->
-              <form action="" name="eliminar" method="POST">
+              <form action="eliminar.php" name="eliminar" method="POST">
 						    <button class="ui red button" name="boton" type="submit" value="b">Eliminar</button>
 					    </form>
 					  </div>
