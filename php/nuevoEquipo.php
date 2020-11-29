@@ -42,7 +42,7 @@
 
   if (mysqli_query($conexion, $query) && mysqli_query($conexion, $queryJug)) {
     session_start();
-    $_SESSION["Gamertag"] =$gamertag ;
+    $_SESSION["usuario"] =$gamertag ;
     header("location: principal.php");
   } else {
     echo "Error: " . $query . "<br>" . mysqli_error($conexion);

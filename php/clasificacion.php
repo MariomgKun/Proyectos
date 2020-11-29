@@ -54,9 +54,8 @@
 							$query = "SELECT idEquipo FROM perfil WHERE Gamertag = '$aux'"; 
 							$result = mysqli_query($conexion, $query);
 							$row = mysqli_fetch_assoc($result);
-							if($row != NULL){
 							$id = $row['idEquipo'];
-							
+
 							/*echo "<script type='text/javascript'>alert('$id');</script>";*/
 
 							$query2 = "SELECT NombreEquip, TorneosInscritos, Puntajes FROM equipo WHERE idEquipo = '$id'"; 
@@ -69,13 +68,10 @@
 								'</div><div class="ui segment"></p><p>Torneos Inscritos: ' . $row["TorneosInscritos"]. 
 								'</div><div class="ui segment"></p><p>Puntajes:' . $row["Puntajes"]. '</p></div></div>';
 								}
-							} }else {
-								echo "No tienes equipo";
+							} else {
+								echo "0 results";
 							}
 						?>
-						<form action="eliminar.php" name="eliminar" method="POST">
-						    <button class="ui red button" name="boton" type="submit" value="b">Eliminar</button>
-					    </form>
 					</div>
 				</div>
 			</div>

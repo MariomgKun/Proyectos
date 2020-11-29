@@ -42,7 +42,7 @@
                 <img class="ui small image" src="img/ej1.jpg">
                 <span>Nombre jerarquia</span>
 
-                <form name ="formularioNuevoEquipo" action= "nuevoEquipo.php" method="POST"> 
+                <form name ="formularioNuevoEquipo" action= "./php/nuevoEquipo.php" method="POST"> 
 
                     <div class="fields">
                         <div class="field">
