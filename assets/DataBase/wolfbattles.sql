@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2020 a las 00:43:52
--- Versión del servidor: 10.4.16-MariaDB
--- Versión de PHP: 7.4.12
+-- Tiempo de generación: 26-11-2020 a las 19:27:38
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -243,7 +243,7 @@ ALTER TABLE `moderador`
 -- Filtros para la tabla `perfil`
 --
 ALTER TABLE `perfil`
-  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `perfil_ibfk_1` FOREIGN KEY (`idEquipo`) REFERENCES `equipo` (`idEquipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `torneo`
