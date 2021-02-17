@@ -1,0 +1,2 @@
+﻿Sobregeneralizacion 
+Sacas una conclusion general a partir de un acontecimiento puntual.

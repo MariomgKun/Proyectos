@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap4-toggle.min.css">
+    <link  id="estilo" rel="stylesheet" href="css/estilo.css">
+    <title>Resultados</title>
+    <meta name="title" content="">
+    <meta name="description" content="Sistema Inteligente y Ciberseguridad">
+  </head>
+  <body class="pt-5 pb-5 " onload="resultados()">
+    <div class="container main rounded pl-5 pr-5 pt-3 pb-5">
+      <div class="row titulo pt-1 pb-3">
+        <div class="col-md-10 pt-4">
+          <p class="font-weight-bold pl-3 h1"><a href="index.html" style="color:black;">AyudaCognitivaApp / Resultados</a> </p>
+        </div>
+        <div class="col-md-2">
+            <a href="index.html"><img  class="" src="./imagenes/logo.png" width="" height="100" alt="100"></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            Estos son tus resultados
+        </div>
+        <div class="card-body">
+            <!--Graficas-->
+            Abstracción selectiva
+           <div class="progress" >
+            <div id="Abstraccion_selectiva" class="progress-bar progress-bar-striped"  role="progressbar"  aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" ></div>
+          </div>
+          Pensamiento dicotómico
+          <div class="progress">
+           <div id="Pensamiento_dicotomico" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="20"></div>
+         </div>
+         Inferencia arbitraria
+         <div class="progress">
+            <div id="Inferencia_arbitraria" class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="20"></div>
+          </div>
+          Sobregeneralización
+          <div class="progress">
+            <div id="Sobregeneralizacion" class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="20"></div>
+          </div>
+          Maximización y Minimización
+          <div class="progress">
+            <div id="Maximización_y_minimización" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="20"></div>
+          </div>
+          Personalización
+          <div class="progress">
+           <div id="Personalizacion" class="progress-bar progress-bar-striped" role="progressbar" style="width: 30%; background-color: cadetblue;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="20"></div>
+         </div>
+         Catatrofismo
+         <div class="progress">
+          <div id="Catastrofismo" class="progress-bar progress-bar-striped " role="progressbar" style="width: 40%; background-color: orangered;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="20"></div>
+        </div>
+        Asumir casualidad temporal
+        <div class="progress">
+           <div id="Casualidad_temporal" class="progress-bar progress-bar-striped " role="progressbar" style="width: 60%; background-color: palevioletred;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="20"></div>
+         </div>
+         Autoreferencias
+         <div class="progress">
+           <div id="Autoreferencias" class="progress-bar progress-bar-striped " role="progressbar" style="width: 85%; background-color:peru;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="20"></div>
+         </div>
+         Responsabilidad excesiva
+         <div class="progress">
+           <div id="Responsabilidad_excesiva" class="progress-bar progress-bar-striped " role="progressbar" style="width: 5%; background-color:rebeccapurple;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="20"></div>
+         </div><br>
+
+          <!--Boton desplegable 1-->
+          <p>
+            <button class="btn btn-warning btn-lg font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                ¿Qué significan mis resultados?
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <div class="col-md-12">
+                    <h7 class="card-title font-weight-bold"><span id="Distorsion1"></span></h7>
+                    <p class="card-text pt-7 pb-7 h7"><span id="Significado1"></span></p>
+                    
+                    <h7 class="card-title font-weight-bold"><span id="Distorsion2"></span></h7>
+                    <p class="card-text pt-7 pb-7 h7"><span  id="Significado2"></span></p>
+                    
+                    <h7 class="card-title font-weight-bold"><span id="Distorsion3"></span></h7>
+                    <p class="card-text pt-7 pb-7 h7"><span id="Significado3"></span></p>
+
+                    <h7 class="card-title font-weight-bold">Te aconsejamos</h7>
+                    <ol class="card_text ">
+                      <li>Identifica la distorsión cognitiva.</li>
+                      <li>Anota la fecha y hora.</li>
+                      <li>Describe la situación en la que se presenta.</li>
+                      <li>Anota la distorsión cognitiva y el porcentaje de que tan posible es que pase lo que estás pensando.</li>
+                      <li>Explica las emociones que sentiste en ese momento.</li>
+                      <li>En el apartado de pensamiento adaptativo debes anotar el pensamiento más lógico que puede estar ocurriendo.</li>
+                      <li>Escribe la(s) emoción(es) que sientas después de haber pensado algo más razonable.</li>
+                    </ol> 
+                    <div class="table-responsive pt-3">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Situación</th>
+                            <th scope="col">Distorción Cognitiva</th>
+                            <th scope="col">Emoción</th>
+                            <th scope="col">Pensamiento adaptativo</th>
+                            <th scope="col">Emoción</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                            <td>______</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+            </div>
+          </div>                
+        </div>       
+      </div>
+    </div>
+    <!-- Bootstrap-->
+    <script src="js/preguntas.js"></script>
+   <script src="js/jquery.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/bootstrap4-toggle.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+  </body>
+
+</html>

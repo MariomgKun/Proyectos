@@ -1,0 +1,161 @@
+file:///var/www/html/ProyectoCCS/Proyecto%20final/php/preguntas.php {"mtime":1590796533643,"ctime":1590691703140,"size":5479,"etag":"356bipbl75ln","orphaned":false}
+<?php
+session_start(); // Inicio o activo la sesion
+
+
+class DistorsionCognitiva{
+    public $nombre;
+    public $valor;
+}
+
+class DistorsionesCognitivas{
+    public $variablesinicializadas;
+
+    function __construct()
+    {
+        if(!isset($_SESSION['status']))
+        {
+            $this->variablesinicializadas = false;
+        }
+        else
+        {
+            $this->variablesinicializadas = true;
+        }
+    }
+
+    function iniciar_variables()
+    {
+        if($this->variablesinicializadas == false) // Si las variables no estas inicializadas
+        { // Inicializo las variables con los nombres de las distorciones cognitivas
+            $_SESSION['status'] = "activa";
+            $_SESSION['Abstraccion_selectiva'] = 0;
+            $_SESSION['Pensamiento_dicotomatico'] = 0;
+            $_SESSION['Inferencia_arbitraria'] = 0;
+            $_SESSION['Sobregeneralizacion'] = 0;
+            $_SESSION['Maximización_y_minimización'] = 0;
+            $_SESSION['Personalizacion'] = 0;
+            $_SESSION['Catastrofismo'] = 0;
+            $_SESSION['Asumir_la_casualidad_temporal'] = 0;
+            $_SESSION['Autoreferencias'] = 0;
+            $_SESSION['Responsabilidad_excesiva'] = 0; 
+            $_SESSION['index'] = 0;
+            $this->variablesinicializadas = true;
+            return True;
+        }
+        else // Si ya estan creadas
+        {  // No  hago nada
+             return false; 
+        }
+    }
+    function DistorsionesCognitivas_Nombre($indice)
+    {
+        if(is_numeric($indice) && !is_float($indice))
+        { 
+            switch($indice)
+            {
+                case 1:
+                    return 'Abstraccion_selectiva';
+                break;
+                case 2:
+                    return 'Pensamiento_dicotomatico';
+                break;
+                case 3:
+                    return 'Inferencia_arbitraria';
+                break;
+                case 4:
+                    return 'Sobregeneralizacion';
+                break;
+                case 5:
+                    return 'Maximización_y_minimización';
+                break;
+                case 6:
+                    return 'Personalizacion';
+                break;
+                case 7:
+                    return 'Catastrofismo';
+                break;
+                case 8:
+                    return 'Asumir_la_casualidad_temporal';
+                break;
+                case 9:
+                    return 'Autoreferencias';
+                break;
+                case 10: 
+                    return 'Responsabilidad_excesiva';
+                break;
+                default:
+                    return FALSE;
+            }
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
+    function Incremento_DistorsionesCognitivas($incremento,$distorsion)
+    {
+        $distorsion = $this->DistorsionesCognitivas_Nombre($distorsion);
+        if(is_numeric($incremento) && !is_float($incremento))
+        {
+            if($incremento >= -2 && $incremento <= 2) // el incremento solo puede tener los valores entre -2 y 2
+            {
+                if(isset($_SESSION[$distorsion])) // Si la variable Abstraccion_selectiva existe
+                {
+                    $_SESSION[$distorsion] = $_SESSION[$distorsion] + $incremento;
+                    return $_SESSION[$distorsion];
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+        
+    } 
+
+    function DistorsionesCognitivas_Valor($distorsion)
+    {
+        $distorsion = $this->DistorsionesCognitivas_Nombre($distorsion);
+        return $_SESSION[$distorsion];
+    } 
+    
+    function resultados()
+    {
+        $distorsiones;
+        for($i = 1 ; $i <= 10; $i++) // Obtengo los valores de las distorsiones cognitivas 
+        {
+            $aux = new DistorsionCognitiva();
+            $aux->nombre = $this->DistorsionesCognitivas_Nombre($i);
+            $aux->valor = $this->DistorsionesCognitivas_Valor($i);
+            $distorsiones[$i] = $aux;
+        }
+        echo json_encode($distorsiones);
+        return True;   
+    }
+
+    function siguientepregunta()
+    {
+      if($_SESSION['index'] <= 10)
+      {
+          $i = $_SESSION['index'];
+          $_SESSION['index'] = $_SESSION['index'] + 1;
+          return $i;
+      } 
+      else
+      {
+
+      } 
+      
+    }
+}
+
+?>

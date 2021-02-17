@@ -1,0 +1,11 @@
+1. Identifica la distorsión cognitiva.
+2. Anota la fecha y hora.
+3. Describe la situación en la que se presenta.
+4. Anota la distorsión cognitiva y el porcentaje de que tan posible es que pase lo que estás pensando.
+5. Explica las emociones que sentiste en ese momento.
+6. En el apartado de pensamiento adaptativo debes anotar el pensamiento más lógico que puede estar ocurriendo.
+7. Escribe la(s) emoción(es) que sientas después de haber pensado algo más razonable.
+
+
+
+Fecha || Hora || Situación || Distorción Cognitiva % || Emoción % || Pensamiento adaptativo % || Emoción %

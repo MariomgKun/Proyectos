@@ -1,0 +1,14 @@
+/*Separadores*/
+.after1::after{
+    content:'';
+    display: block;
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 500px;
+    height: 2px;
+    background: linear-gradient(to bottom,
+    rgba(150, 7, 107, 0.45),
+    rgba(9, 150, 231, 0.6),
+    rgba(200, 13, 247, 0.829)
+    );
+}
